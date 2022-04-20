@@ -25,6 +25,10 @@ public class Graph {
             for (int i = 0; i <vertices ; i++) {
                 adjacencylist[i] = new LinkedList<>();
             }
+        }   
+        public LinkedList<Edge> getAdjacencyList(int i){
+            LinkedList<Edge> list = adjacencylist[i];
+            return list;
         }
 
         public void addEgde(int source, int destination, int weight) {
