@@ -5,12 +5,36 @@ public class Graph {
     int source;
     int destination;
     int weight;
+    Boolean sourceVisited;
 
     public Edge(int source, int destination, int weight) {
         this.source = source;
         this.destination = destination;
         this.weight = weight;
     }
+    
+    public boolean isVisited(){
+        return sourceVisited;
+    }
+    
+
+    public void setVisited(boolean visited){
+        this.sourceVisited = visited;
+    }
+
+    public getSource(){
+        return source;
+    }
+
+    public getDestination(){
+        return destination;
+    }
+
+    public getweight(){
+        return weight;
+    }
+
+    
 
     }
 
