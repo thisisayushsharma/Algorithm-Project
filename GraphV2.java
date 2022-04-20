@@ -6,6 +6,10 @@ public class GraphV2 {
     private final List<Vertex> vertexes;
     private final List<Edge> edges;
 
+    public Graph(List<Vertex> vertexes){
+        this.vertexes = vertexes;
+    }
+
     public Graph(List<Vertex> vertexes, List<Edge> edges) {
         this.vertexes = vertexes;
         this.edges = edges;

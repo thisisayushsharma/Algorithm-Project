@@ -4,10 +4,16 @@ public class VertexV2 {
     final private String id;
     final private String name;
 
+    private boolean visited;
+    private List<Vertex> adjacencyList;
+
 
     public Vertex(String id, String name) {
         this.id = id;
         this.name = name;
+        this.adjacencyList = new ArrayList<>();
+
+
     }
     public String getId() {
         return id;
@@ -15,6 +21,22 @@ public class VertexV2 {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited){
+        this.visited = visited;
+    }
+
+    public List<Vertex> getAdjacencyList(){
+        return adjacencyList;
+    }
+
+    public void addNeighbor(Vertex vertex){
+        this.adjacencyList.add(vertex);
     }
 
     @Override
