@@ -22,15 +22,15 @@ public class Graph {
         this.sourceVisited = visited;
     }
 
-    public getSource(){
+    public int getSource(){
         return source;
     }
 
-    public getDestination(){
+    public int getDestination(){
         return destination;
     }
 
-    public getweight(){
+    public int getweight(){
         return weight;
     }
 

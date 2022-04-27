@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
         int vertices = 8;
@@ -108,6 +109,7 @@ public class Main {
         fullyConnected.addEgde(4,1,4);
         fullyConnected.addEgde(5,0,5);
         
-        }
+        System.out.print(tree.getAdjacencyList(0).get(1).destination);        
     }
+}
 

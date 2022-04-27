@@ -5,6 +5,10 @@ public class Vertex {
 
     private boolean visited;
     private Map<Vertex,Integer> neighbors;
+    //added later
+    private Integer distance = Integer.MAX_VALUE;
+    private LinkedList<Vertex> shortestPath = new LinkedList<>();
+    //
 
     public Vertex(String name) {
         this.name = name;
@@ -31,6 +35,20 @@ public class Vertex {
         neighbors.put(vertex,weight);
         //this.neighbors.add(map);
 
+    }
+
+    //Added for Dijkstra
+    public void setDistance(int distance){
+        this.distance = distance;
+    }
+    public int getDistance(){
+        return this.distance;
+    }
+    public void setShortestPath(LinkedList<Vertex> shortestPath){
+        this.shortestPath = shortestPath;
+    }
+    public LinkedList<Vertex> getShortestPath(){
+        return this.shortestPath;
     }
     
 }
