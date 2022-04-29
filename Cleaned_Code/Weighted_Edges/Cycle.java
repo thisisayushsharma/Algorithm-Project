@@ -53,15 +53,15 @@ public class Cycle{
         d2.addNeighbor(b2,9);
         b2.addNeighbor(a2,9);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
-        list.add(a2); 
-        list.add(b2); 
-        list.add(c2); 
-        list.add(d2); 
-        list.add(e2); 
-        list.add(f2); 
-        list.add(g2); 
-        list.add(h2); 
+        LinkedList<Vertex> list2= new LinkedList<Vertex>();
+        list2.add(a2); 
+        list2.add(b2); 
+        list2.add(c2); 
+        list2.add(d2); 
+        list2.add(e2); 
+        list2.add(f2); 
+        list2.add(g2); 
+        list2.add(h2); 
         //third graph
         Vertex a3 = new Vertex("a3");
         Vertex b3 = new Vertex("b3");
@@ -81,15 +81,15 @@ public class Cycle{
         d3.addNeighbor(b3,9);
         b3.addNeighbor(a3,9);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
-        list.add(a3); 
-        list.add(b3); 
-        list.add(c3); 
-        list.add(d3); 
-        list.add(e3); 
-        list.add(f3); 
-        list.add(g3); 
-        list.add(h3); 
+        LinkedList<Vertex> list3= new LinkedList<Vertex>();
+        list3.add(a3); 
+        list3.add(b3); 
+        list3.add(c3); 
+        list3.add(d3); 
+        list3.add(e3); 
+        list3.add(f3); 
+        list3.add(g3); 
+        list3.add(h3); 
 
         DepthFirstSearch defs = new DepthFirstSearch();
         long start = System.currentTimeMillis();
@@ -100,11 +100,23 @@ public class Cycle{
         System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
 
         BreadthFirstSearch bfs=new BreadthFirstSearch();
-        long start = System.currentTimeMillis();
+        long start2 = System.currentTimeMillis();
         bfs.traverse(a); 
-        long end = System.currentTimeMillis();
+        long end2 = System.currentTimeMillis();
         
-        NumberFormat formatter = new DecimalFormat("#0.00000");
-        System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+        System.out.print("Execution time is " + formatter.format((end2- start2) / 1000d) + " seconds");
+        
+        //Dijkstra
+        long start3 = System.currentTimeMillis();
+        list3 = Dijkstra.calculateShortestPathFromSource(list3,a3);
+        System.out.printf("The source node is: %s\n", a3.getName());
+
+        for(Vertex i: list3)
+        {
+            System.out.printf("The distance from the source node %s to %s is: %d\n", a3.getName(), i.getName(), i.getDistance());
+        }
+        long end3 = System.currentTimeMillis();
+
+        System.out.print("Execution time for BFS is " + formatter.format((end3 - start3) / 1000d) + " seconds");
 	}
 }
