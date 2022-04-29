@@ -127,32 +127,37 @@ public class EighteenEdgeGraph{
         list3.add(g3); 
         list3.add(h3); 
 
-        DepthFirstSearch defs = new DepthFirstSearch();
-        long start = System.currentTimeMillis();
-        defs.dfs(list); 
-        long end = System.currentTimeMillis();
-        
-        NumberFormat formatter = new DecimalFormat("#0.00000");
-        System.out.println("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
-
+        //BFS
         BreadthFirstSearch bfs=new BreadthFirstSearch();
-        long start2 = System.currentTimeMillis();
+        long start1 = System.nanoTime();
         bfs.traverse(a); 
-        long end2 = System.currentTimeMillis();
+        long end1 = System.nanoTime();
+        
+        NumberFormat formatter = new DecimalFormat("#0.0000");
+        System.out.print("Execution time is " + formatter.format((end1 - start1) / 1000000d) +" "+ " milliseconds");
 
-        System.out.print("Execution time is " + formatter.format((end2 - start2) / 1000d) + " seconds");
+        System.out.println();
 
-        //dijkstra
-        long start3 = System.currentTimeMillis();
-        list3 = Dijkstra.calculateShortestPathFromSource(list3,a3);
-        System.out.printf("The source node is: %s\n", a3.getName());
+        //DFS
+        DepthFirstSearch defs = new DepthFirstSearch();
+        long start2 = System.nanoTime();
+        defs.dfs(list2); 
+        long end2 = System.nanoTime();
+        
+        System.out.print("Execution time is " + formatter.format((end2 - start2) / 1000000d) +" " +" milliseconds");
 
-        for(Vertex i: list3)
-        {
-            System.out.printf("The distance from the source node %s to %s is: %d\n", a3.getName(), i.getName(), i.getDistance());
+        System.out.println();
+
+        //Dijkstra
+        long start3 = System.nanoTime();
+        list3 = Dijkstra.calculateShortestPathFromSource(list3, a3);
+        System.out.printf("The source node is: %s\n",a3.getName());
+        
+        for (Vertex i: list3){
+            System.out.printf("The distance from source node %s to %s is: %d\n",a3.getName(),i.getName(),i.getDistance());
         }
-        long end3 = System.currentTimeMillis();
+        long end3 = System.nanoTime();
 
-        System.out.print("Execution time for BFS is " + formatter.format((end3 - start3) / 1000d) + " seconds");
+        System.out.print("Execution time is " + formatter.format((end3 - start3) / 1000000d) +" "+ "milliseconds");
 	}
 }
