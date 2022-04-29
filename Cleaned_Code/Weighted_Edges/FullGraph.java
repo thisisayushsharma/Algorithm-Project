@@ -163,14 +163,25 @@ public class FullGraph{
         long end = System.currentTimeMillis();
         
         NumberFormat formatter = new DecimalFormat("#0.00000");
-        System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+        System.out.print("Execution time for DFS is " + formatter.format((end - start) / 1000d) + " seconds");
 
         BreadthFirstSearch bfs=new BreadthFirstSearch();
         long start = System.currentTimeMillis();
         bfs.traverse(a2); 
         long end = System.currentTimeMillis();
         
-        NumberFormat formatter = new DecimalFormat("#0.00000");
-        System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+        System.out.print("Execution time for BFS is " + formatter.format((end - start) / 1000d) + " seconds");
+
+        long start = System.currentTimeMillis();
+        list3 = Dijkstra.calculateShortestPathFromSource(list3,a3);
+        System.out.println("The source node is: %s\n", a3.getName());
+
+        for(Vertex i: list3)
+        {
+            System.out.println("The distance from the source node %s to %s is: %d\n", a3.getName(), i.getName(), i.getDistance());
+        }
+        long end = System.currentTimeMillis();
+
+        System.out.print("Execution time for BFS is " + formatter.format((end - start) / 1000d) + " seconds");
 	}
 }
