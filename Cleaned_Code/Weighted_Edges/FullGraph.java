@@ -96,7 +96,7 @@ public class FullGraph{
         e2.addNeighbor(b2,9);
         f2.addNeighbor(a2,9);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
+        LinkedList<Vertex> list2= new LinkedList<Vertex>();
         list.add(a2); 
         list.add(b2); 
         list.add(c2); 
@@ -147,7 +147,7 @@ public class FullGraph{
         e3.addNeighbor(b3,9);
         f3.addNeighbor(a3,9);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
+        LinkedList<Vertex> list3= new LinkedList<Vertex>();
         list.add(a3); 
         list.add(b3); 
         list.add(c3); 
@@ -167,7 +167,7 @@ public class FullGraph{
 
         BreadthFirstSearch bfs=new BreadthFirstSearch();
         long start = System.currentTimeMillis();
-        bfs.traverse(a); 
+        bfs.traverse(a2); 
         long end = System.currentTimeMillis();
         
         NumberFormat formatter = new DecimalFormat("#0.00000");

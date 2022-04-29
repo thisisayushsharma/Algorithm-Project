@@ -65,7 +65,7 @@ public class TweleveEdgeGraph{
         g2.addNeighbor(a2,7);
         b2.addNeighbor(h2,4);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
+        LinkedList<Vertex> list2= new LinkedList<Vertex>();
         list.add(a2); 
         list.add(b2); 
         list.add(c2); 
@@ -100,7 +100,7 @@ public class TweleveEdgeGraph{
         g3.addNeighbor(a3,7);
         b3.addNeighbor(h3,4);
 
-        LinkedList<Vertex> list= new LinkedList<Vertex>();
+        LinkedList<Vertex> list3= new LinkedList<Vertex>();
         list.add(a3); 
         list.add(b3); 
         list.add(c3); 
@@ -120,7 +120,7 @@ public class TweleveEdgeGraph{
 
         BreadthFirstSearch bfs=new BreadthFirstSearch();
         long start = System.currentTimeMillis();
-        bfs.traverse(a); 
+        bfs.traverse(a2); 
         long end = System.currentTimeMillis();
         
         NumberFormat formatter = new DecimalFormat("#0.00000");
